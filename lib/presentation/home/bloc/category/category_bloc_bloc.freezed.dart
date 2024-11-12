@@ -19,32 +19,38 @@ mixin _$CategoryBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() getCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? getCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? getCategories,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_GetCategories value) getCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_GetCategories value)? getCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_GetCategories value)? getCategories,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +119,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() getCategories,
   }) {
     return started();
   }
@@ -121,6 +128,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? getCategories,
   }) {
     return started?.call();
   }
@@ -129,6 +137,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? getCategories,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -141,6 +150,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_GetCategories value) getCategories,
   }) {
     return started(this);
   }
@@ -149,6 +159,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_GetCategories value)? getCategories,
   }) {
     return started?.call(this);
   }
@@ -157,6 +168,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_GetCategories value)? getCategories,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -171,12 +183,117 @@ abstract class _Started implements CategoryBlocEvent {
 }
 
 /// @nodoc
+abstract class _$$GetCategoriesImplCopyWith<$Res> {
+  factory _$$GetCategoriesImplCopyWith(
+          _$GetCategoriesImpl value, $Res Function(_$GetCategoriesImpl) then) =
+      __$$GetCategoriesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetCategoriesImplCopyWithImpl<$Res>
+    extends _$CategoryBlocEventCopyWithImpl<$Res, _$GetCategoriesImpl>
+    implements _$$GetCategoriesImplCopyWith<$Res> {
+  __$$GetCategoriesImplCopyWithImpl(
+      _$GetCategoriesImpl _value, $Res Function(_$GetCategoriesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CategoryBlocEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetCategoriesImpl implements _GetCategories {
+  const _$GetCategoriesImpl();
+
+  @override
+  String toString() {
+    return 'CategoryBlocEvent.getCategories()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetCategoriesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getCategories,
+  }) {
+    return getCategories();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getCategories,
+  }) {
+    return getCategories?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getCategories,
+    required TResult orElse(),
+  }) {
+    if (getCategories != null) {
+      return getCategories();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetCategories value) getCategories,
+  }) {
+    return getCategories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetCategories value)? getCategories,
+  }) {
+    return getCategories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetCategories value)? getCategories,
+    required TResult orElse(),
+  }) {
+    if (getCategories != null) {
+      return getCategories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetCategories implements CategoryBlocEvent {
+  const factory _GetCategories() = _$GetCategoriesImpl;
+}
+
+/// @nodoc
 mixin _$CategoryBlocState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<InvalidType> categories) loaded,
+    required TResult Function(List<Category> categories) loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -184,7 +301,7 @@ mixin _$CategoryBlocState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<InvalidType> categories)? loaded,
+    TResult? Function(List<Category> categories)? loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -192,7 +309,7 @@ mixin _$CategoryBlocState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<InvalidType> categories)? loaded,
+    TResult Function(List<Category> categories)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -288,7 +405,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<InvalidType> categories) loaded,
+    required TResult Function(List<Category> categories) loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -299,7 +416,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<InvalidType> categories)? loaded,
+    TResult? Function(List<Category> categories)? loaded,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -310,7 +427,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<InvalidType> categories)? loaded,
+    TResult Function(List<Category> categories)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -405,7 +522,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<InvalidType> categories) loaded,
+    required TResult Function(List<Category> categories) loaded,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -416,7 +533,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<InvalidType> categories)? loaded,
+    TResult? Function(List<Category> categories)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -427,7 +544,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<InvalidType> categories)? loaded,
+    TResult Function(List<Category> categories)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -485,7 +602,7 @@ abstract class _$$LoadedImplCopyWith<$Res> {
           _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<InvalidType> categories});
+  $Res call({List<Category> categories});
 }
 
 /// @nodoc
@@ -507,7 +624,7 @@ class __$$LoadedImplCopyWithImpl<$Res>
       null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<InvalidType>,
+              as List<Category>,
     ));
   }
 }
@@ -515,12 +632,12 @@ class __$$LoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl(final List<InvalidType> categories)
+  const _$LoadedImpl(final List<Category> categories)
       : _categories = categories;
 
-  final List<InvalidType> _categories;
+  final List<Category> _categories;
   @override
-  List<InvalidType> get categories {
+  List<Category> get categories {
     if (_categories is EqualUnmodifiableListView) return _categories;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_categories);
@@ -557,7 +674,7 @@ class _$LoadedImpl implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<InvalidType> categories) loaded,
+    required TResult Function(List<Category> categories) loaded,
     required TResult Function(String message) error,
   }) {
     return loaded(categories);
@@ -568,7 +685,7 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<InvalidType> categories)? loaded,
+    TResult? Function(List<Category> categories)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loaded?.call(categories);
@@ -579,7 +696,7 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<InvalidType> categories)? loaded,
+    TResult Function(List<Category> categories)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -628,9 +745,9 @@ class _$LoadedImpl implements _Loaded {
 }
 
 abstract class _Loaded implements CategoryBlocState {
-  const factory _Loaded(final List<InvalidType> categories) = _$LoadedImpl;
+  const factory _Loaded(final List<Category> categories) = _$LoadedImpl;
 
-  List<InvalidType> get categories;
+  List<Category> get categories;
 
   /// Create a copy of CategoryBlocState
   /// with the given fields replaced by the non-null parameter values.
@@ -709,7 +826,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<InvalidType> categories) loaded,
+    required TResult Function(List<Category> categories) loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -720,7 +837,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<InvalidType> categories)? loaded,
+    TResult? Function(List<Category> categories)? loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -731,7 +848,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<InvalidType> categories)? loaded,
+    TResult Function(List<Category> categories)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {

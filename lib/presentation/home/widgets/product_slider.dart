@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-import 'package:carousel_slider/carousel_controller.dart' as carousel_slider_controller;
+// import 'package:carousel_slider/carousel_controller.dart' as carousel_slider_controller;
 
 class ProductSlider extends StatefulWidget {
   final List<String> items;
