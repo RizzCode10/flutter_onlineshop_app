@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_onlineshop_app/data/datasources/category_remote_datasource.dart';
+import 'package:flutter_onlineshop_app/data/datasources/product_remote_datasource.dart';
+import 'package:flutter_onlineshop_app/presentation/home/bloc/all_porduct/all_product_bloc.dart';
+import 'package:flutter_onlineshop_app/presentation/home/bloc/best_seller_product/best_seller_product_bloc.dart';
 import 'package:flutter_onlineshop_app/presentation/home/bloc/category/category_bloc_bloc.dart';
+import 'package:flutter_onlineshop_app/presentation/home/bloc/checkout/checkout_bloc.dart';
+import 'package:flutter_onlineshop_app/presentation/home/bloc/special_offer_product/special_offer_product_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'core/constants/colors.dart';
 import 'core/router/app_router.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -19,8 +23,24 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final appRouter = AppRouter();
     final router = appRouter.router;
-    return BlocProvider(
-      create: (context) => CategoryBlocBloc(CategoryRemoteDatasource()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => CategoryBlocBloc(CategoryRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => AllProductBloc(ProductRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => BestSellerProductBloc(ProductRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => SpecialOfferProductBloc(ProductRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => CheckoutBloc(),
+        ),
+      ],
       child: MaterialApp.router(
         title: 'Flutter Demo',
         theme: ThemeData(

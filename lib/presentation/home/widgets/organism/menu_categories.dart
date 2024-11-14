@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_onlineshop_app/presentation/home/bloc/category/category_bloc_bloc.dart';
 
-import '../../../../core/core.dart';
+// import '../../../../core/core.dart';
 import '../category_button.dart';
 
 class MenuCategories extends StatefulWidget {
@@ -25,6 +25,7 @@ class _MenuCategoriesState extends State<MenuCategories> {
       builder: (context, state) {
         return state.maybeWhen(
           loaded: (categories) => Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ...categories.map(
                 (category) => Flexible(
@@ -38,6 +39,12 @@ class _MenuCategoriesState extends State<MenuCategories> {
             ],
           ),
           orElse: () => const SizedBox.shrink(),
+          loading: () => const Center(
+            child: CircularProgressIndicator(),
+          ),
+          error: (message) => Center(
+            child: Text(message),
+          ),
         );
         //   return Row(
         //   children: [
