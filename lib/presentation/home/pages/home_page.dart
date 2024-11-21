@@ -10,8 +10,8 @@ import '../../../core/assets/assets.gen.dart';
 import '../../../core/components/search_input.dart';
 import '../../../core/components/spaces.dart';
 import '../../../core/router/app_router.dart';
-import '../models/product_model.dart';
-import '../models/store_model.dart';
+// import '../models/product_model.dart';
+// import '../models/store_model.dart';
 import '../widgets/banner_slider.dart';
 import '../widgets/organism/menu_categories.dart';
 import '../widgets/organism/product_list.dart';
@@ -242,6 +242,10 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Cwb Store'),
         actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Assets.icons.notification.svg(height: 24.0),
+          ),
           BlocBuilder<CheckoutBloc, CheckoutState>(
             builder: (context, state) {
               return state.maybeWhen(
@@ -281,10 +285,7 @@ class _HomePageState extends State<HomePage> {
               );
             },
           ),
-          IconButton(
-            onPressed: () {},
-            icon: Assets.icons.notification.svg(height: 24.0),
-          ),
+          const SizedBox(width: 16.0),
         ],
       ),
       body: ListView(

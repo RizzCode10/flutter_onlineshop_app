@@ -3,7 +3,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:flutter_onlineshop_app/data/datasources/category_remote_datasource.dart';
-import 'package:http/http.dart';
+// import 'package:http/http.dart';
 
 import '../../../../data/models/responses/category_response_model.dart';
 

@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_onlineshop_app/presentation/home/pages/home_page.dart';
+import 'package:flutter_onlineshop_app/presentation/home/pages/logout_page.dart';
+import 'package:flutter_onlineshop_app/presentation/orders/pages/cart_page.dart';
 
 import '../../../core/core.dart';
 
@@ -20,19 +22,20 @@ class _DashboardPageState extends State<DashboardPage> {
   final List<Widget> _pages = [
     const HomePage(),
     // const SearchPage(),
-    // const CartPage(),
+    const CartPage(),
+    const LogoutPage(),
     // const Center(
     //   child: Text('This Page 1'),
     // ),
     const Center(
       child: Text('This Page 2'),
     ),
-    const Center(
-      child: Text('This Page 3'),
-    ),
-    const Center(
-      child: Text('This Page 4 '),
-    ),
+    // const Center(
+    //   child: Text('This Page 3'),
+    // ),
+    // const Center(
+    //   child: Text('This Page 4 '),
+    // ),
   ];
 
   void _onItemTapped(int index) {
